@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trayn — The Private Workspace for Online Fitness Trainers</title>
-<meta name="description" content="Replace WhatsApp, Sheets, and Zoom with one private platform. Workouts, diet, progress tracking, and video calls — built for India's online trainers.">
+<title>Trayn — The Private Workspace for Certified Online Personal Trainers in India</title>
+<meta name="description" content="The private workspace for serious online personal trainers in India. Replace WhatsApp + Sheets + Zoom with one professional workspace. Privacy-first. Trainer-only. Made in India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -14,12 +14,15 @@ body { font-family: 'Inter', sans-serif; background: #fff; color: #111827; line-
 nav { padding: 20px 0; position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid #f3f4f6; }
 nav .container { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 24px; font-weight: 900; color: #6C63FF; }
+.nav-login { color: #6C63FF; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 16px; padding: 10px 16px; border-radius: 10px; transition: background 0.2s; }
+.nav-login:hover { background: #F3F4F6; }
+.nav-buttons { display: flex; align-items: center; gap: 8px; }
 .nav-cta { background: #6C63FF; color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; }
 .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(180deg, #F5F3FF 0%, #fff 100%); }
 .badge { display: inline-block; background: #EEF2FF; color: #6C63FF; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; margin-bottom: 24px; }
 h1 { font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
 h1 span { color: #6C63FF; }
-.subtitle { font-size: 20px; color: #6B7280; max-width: 640px; margin: 0 auto 36px; }
+.subtitle { font-size: 20px; color: #6B7280; max-width: 680px; margin: 0 auto 36px; }
 .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn-primary { background: #6C63FF; color: #fff; padding: 16px 28px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; transition: transform 0.15s; display: inline-block; border: none; cursor: pointer; }
 .btn-primary:hover { transform: translateY(-2px); }
@@ -39,9 +42,24 @@ section { padding: 80px 0; }
 .feature-card .icon { font-size: 40px; margin-bottom: 16px; }
 .feature-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
 .feature-card p { color: #6B7280; font-size: 15px; }
+.not-for-everyone { background: #111827; color: #fff; padding: 80px 24px; border-radius: 24px; margin: 40px 0; }
+.not-for-everyone h2 { font-size: 36px; font-weight: 900; margin-bottom: 24px; text-align: center; }
+.nfe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 800px; margin: 0 auto; }
+.nfe-col { padding: 24px; border-radius: 16px; }
+.nfe-yes { background: rgba(108, 99, 255, 0.15); border: 2px solid #6C63FF; }
+.nfe-no { background: rgba(220, 38, 38, 0.1); border: 2px solid #DC2626; }
+.nfe-col h3 { font-size: 22px; margin-bottom: 16px; font-weight: 800; }
+.nfe-col ul { list-style: none; }
+.nfe-col li { padding: 8px 0; font-size: 15px; }
+.nfe-yes li::before { content: "✓ "; color: #6C63FF; font-weight: 900; margin-right: 6px; }
+.nfe-no li::before { content: "✗ "; color: #DC2626; font-weight: 900; margin-right: 6px; }
 .privacy { background: linear-gradient(135deg, #6C63FF 0%, #8B5CF6 100%); color: #fff; text-align: center; padding: 80px 24px; border-radius: 24px; margin: 40px 0; }
 .privacy h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; }
 .privacy p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+.cert-section { background: #F9FAFB; padding: 80px 0; }
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; max-width: 800px; margin: 40px auto 0; }
+.cert-badge { background: #fff; padding: 24px 16px; border-radius: 16px; text-align: center; border: 2px solid #E5E7EB; font-weight: 800; color: #111827; transition: border-color 0.2s; }
+.cert-badge:hover { border-color: #6C63FF; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
 .price-card { background: #fff; border: 2px solid #E5E7EB; padding: 32px; border-radius: 18px; text-align: center; }
 .price-card.featured { border-color: #6C63FF; position: relative; }
@@ -64,7 +82,8 @@ footer { padding: 40px 0; text-align: center; color: #9CA3AF; border-top: 1px so
 @media (max-width: 640px) {
   h1 { font-size: 38px; }
   .section-title { font-size: 30px; }
-  .privacy h2, .waitlist h2 { font-size: 28px; }
+  .privacy h2, .waitlist h2, .not-for-everyone h2 { font-size: 28px; }
+  .nfe-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -73,19 +92,23 @@ footer { padding: 40px 0; text-align: center; color: #9CA3AF; border-top: 1px so
 <nav>
   <div class="container">
     <div class="logo">Trayn</div>
-    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    <div class="nav-buttons">
+      <a href="https://app.gettrayn.com" class="nav-login">Login</a>
+      <a href="https://app.gettrayn.com" class="nav-cta">Sign Up</a>
+    </div>
   </div>
 </nav>
 
 <section class="hero">
   <div class="container">
-    <div class="badge">🇮🇳 Built for India's Online Fitness Trainers</div>
+    <div class="badge">🇮🇳 For Online Personal Trainers in India</div>
     <h1>Stop running your business on <span>WhatsApp</span>.</h1>
-    <p class="subtitle">Trayn is the private workspace where you assign workouts, share diet plans, do form-check video calls, and track every client's progress — all in one professional app.</p>
+    <p class="subtitle">The private workspace for serious online personal trainers in India. Built for the trainers who care about doing things right.</p>
     <div class="cta-row">
-      <a href="#waitlist" class="btn-primary">Join Early Access</a>
+      <a href="#waitlist" class="btn-primary">Apply for Early Access</a>
       <a href="#features" class="btn-secondary">See How It Works</a>
     </div>
+    <p style="margin-top:24px;color:#9CA3AF;font-size:14px;">Free for first 100 verified trainers · No credit card required</p>
   </div>
 </section>
 
@@ -102,18 +125,77 @@ footer { padding: 40px 0; text-align: center; color: #9CA3AF; border-top: 1px so
   </div>
 </section>
 
+<section style="background:#fff;">
+  <div class="container">
+    <div class="not-for-everyone">
+      <h2>Trayn isn't for everyone.</h2>
+      <p style="text-align:center;font-size:18px;opacity:0.85;max-width:600px;margin:0 auto 40px;">We built Trayn because serious trainers deserve professional tools — and clients deserve to know exactly who's coaching them.</p>
+      <div class="nfe-grid">
+        <div class="nfe-col nfe-yes">
+          <h3>✓ Trayn IS for</h3>
+          <ul>
+            <li>Online personal trainers based in India</li>
+            <li>Trainers with real fitness knowledge (formal cert OR years of verified experience)</li>
+            <li>NASM, ACE, ISSA, ACSM, REPS India, K11, FITINDIA certified trainers</li>
+            <li>Trainers building serious client bases</li>
+            <li>Trainers who care about doing things professionally</li>
+            <li>Indian trainers coaching clients globally</li>
+          </ul>
+        </div>
+        <div class="nfe-col nfe-no">
+          <h3>✗ Trayn is NOT for</h3>
+          <ul>
+            <li>Yoga teachers, dieticians, nutritionists (different professions)</li>
+            <li>Influencer "fitness coaches" with no real training experience</li>
+            <li>Anyone trying to mass-onboard hundreds of low-touch clients</li>
+            <li>Offline-only gym trainers (Trayn is for online coaching)</li>
+            <li>Wellness coaches, life coaches, energy healers</li>
+            <li>People who can't pass identity + reference verification</li>
+          </ul>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:32px;font-size:16px;opacity:0.8;">Trayn welcomes serious trainers at every stage — verified by ID and references, or certified by NASM/ACE/etc. You'll be evaluated by real humans, not algorithms.</p>
+    </div>
+  </div>
+</section>
+
 <section id="features" class="solution">
   <div class="container">
     <h2 class="section-title">One app. Everything your business needs.</h2>
-    <p class="section-sub">Built specifically for certified online trainers in India.</p>
+    <p class="section-sub">Built specifically for the certified online trainer.</p>
     <div class="feature-grid">
       <div class="feature-card"><div class="icon">💪</div><h3>Workout Plans</h3><p>Build templates once, assign to any client. Track sets, reps, weight, and effort in real-time.</p></div>
       <div class="feature-card"><div class="icon">🥗</div><h3>Diet Plans</h3><p>Create meal plans with calories, macros, and food items. Clients see exactly what to eat.</p></div>
       <div class="feature-card"><div class="icon">📊</div><h3>Progress Tracking</h3><p>Weight, body fat, measurements, and progress photos — all in one private gallery.</p></div>
-      <div class="feature-card"><div class="icon">📹</div><h3>In-App Video Calls</h3><p>Form-check calls with workout context visible side-by-side. No more Zoom links.</p></div>
-      <div class="feature-card"><div class="icon">💬</div><h3>Private Messaging</h3><p>Real-time chat with your clients. No phone numbers exchanged. Pure professional.</p></div>
-      <div class="feature-card"><div class="icon">🔒</div><h3>Privacy First</h3><p>Progress photos in private storage. Client data encrypted. WhatsApp-free.</p></div>
+      <div class="feature-card"><div class="icon">📹</div><h3>In-App Form Check Calls</h3><p>Video calls with workout context visible side-by-side. No more Zoom links.</p></div>
+      <div class="feature-card"><div class="icon">💬</div><h3>Private Messaging</h3><p>Real-time chat. No phone numbers exchanged. Pure professional.</p></div>
+      <div class="feature-card"><div class="icon">🔒</div><h3>Privacy First</h3><p>Progress photos in encrypted private storage. Client data isolated. WhatsApp-free.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="cert-section">
+  <div class="container">
+    <h2 class="section-title">Three Levels of Verification</h2>
+    <p class="section-sub">Every trainer is reviewed by real humans before joining. Clients see your tier on your profile. Total transparency.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px;max-width:1000px;margin-left:auto;margin-right:auto;">
+      <div style="background:#fff;border:2px solid #E5E7EB;border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:8px;">🥉</div>
+        <h3 style="margin:0 0 8px;color:#111827;font-size:20px;">Trayn Verified</h3>
+        <p style="color:#6B7280;font-size:14px;line-height:1.6;margin:0;">Identity, references, and real coaching experience confirmed</p>
+      </div>
+      <div style="background:#fff;border:2px solid #FEF3C7;border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:8px;">🥈</div>
+        <h3 style="margin:0 0 8px;color:#111827;font-size:20px;">Trayn Certified</h3>
+        <p style="color:#6B7280;font-size:14px;line-height:1.6;margin:0;">Adds verified credentials from NASM, ACE, ISSA, ACSM, REPS India, K11, or FITINDIA</p>
+      </div>
+      <div style="background:#fff;border:2px solid #F3E8FF;border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:8px;">🥇</div>
+        <h3 style="margin:0 0 8px;color:#111827;font-size:20px;">Trayn Elite</h3>
+        <p style="color:#6B7280;font-size:14px;line-height:1.6;margin:0;">Adds portfolio review and 5+ years of tracked coaching results</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:40px;color:#6B7280;">Last month: 47 trainers approved · 23 rejected. We take this seriously.</p>
   </div>
 </section>
 
@@ -128,71 +210,88 @@ footer { padding: 40px 0; text-align: center; color: #9CA3AF; border-top: 1px so
 
 <section id="pricing">
   <div class="container">
-    <h2 class="section-title">Simple, founder-friendly pricing</h2>
-    <p class="section-sub">Free during early access for our first 100 trainers.</p>
+    <h2 class="section-title">Pricing for Founding 100</h2>
+    <p class="section-sub">First 100 verified trainers lock in this price forever. After that, prices increase.</p>
     <div class="pricing-grid">
       <div class="price-card">
-        <h3>Starter</h3>
-        <div class="price">Free</div>
-        <div class="price-sub">First 100 trainers</div>
+        <h3>🥉 Trayn Verified</h3>
+        <div class="price">₹499<span style="font-size:16px;">/mo</span></div>
+        <div class="price-sub">or ₹5,490/year (pay for 11 months)</div>
         <ul>
-          <li>Up to 10 clients</li>
+          <li>Unlimited clients</li>
           <li>Workout & diet plans</li>
-          <li>Progress tracking</li>
+          <li>Progress tracking + photos</li>
           <li>In-app messaging</li>
+          <li>Light WhatsApp automation</li>
+          <li>Trayn Verified badge</li>
         </ul>
       </div>
       <div class="price-card featured">
-        <h3>Pro</h3>
+        <h3>🏅 Trayn Certified</h3>
         <div class="price">₹999<span style="font-size:16px;">/mo</span></div>
-        <div class="price-sub">After early access</div>
+        <div class="price-sub">or ₹10,990/year (pay for 11 months)</div>
         <ul>
-          <li>Up to 30 clients</li>
-          <li>Video calls (10 hrs/mo)</li>
-          <li>Custom branding</li>
-          <li>Priority support</li>
+          <li>Unlimited clients</li>
+          <li>Workout & diet plans</li>
+          <li>Progress tracking + photos</li>
+          <li>In-app messaging</li>
+          <li>In-app form-check video calls</li>
+          <li>Scheduled WhatsApp nudges + flows</li>
+          <li>Custom client-facing branding</li>
+          <li>Featured directory placement</li>
+          <li>Trayn Certified badge</li>
         </ul>
       </div>
       <div class="price-card">
-        <h3>Elite</h3>
+        <h3>👑 Trayn Elite</h3>
         <div class="price">₹2,499<span style="font-size:16px;">/mo</span></div>
-        <div class="price-sub">For serious trainers</div>
+        <div class="price-sub">or ₹27,490/year (pay for 11 months)</div>
         <ul>
           <li>Unlimited clients</li>
-          <li>Unlimited video calls</li>
+          <li>Workout & diet plans</li>
+          <li>Progress tracking + photos</li>
+          <li>In-app messaging</li>
+          <li>In-app form-check video calls</li>
+          <li>Bring Your Own WhatsApp Business API</li>
+          <li>AI-generated coaching messages</li>
           <li>White-label client app</li>
+          <li>Top directory placement</li>
           <li>Dedicated account manager</li>
         </ul>
       </div>
     </div>
+    <p style="text-align:center;margin-top:32px;color:#6B7280;font-weight:600;">Unlimited clients across every tier. Higher tiers unlock features and lower fees, not capacity.</p>
+    <p style="text-align:center;margin-top:16px;color:#9CA3AF;font-size:14px;">Optional Trayn Billing: 3% per transaction for auto-pay, GST receipts, smart payment retry. Skip it = handle payments yourself.</p>
   </div>
 </section>
 
 <section id="waitlist">
   <div class="container">
     <div class="waitlist">
-      <h2>Be among the first 100.</h2>
-      <p>Join the early access list. We'll personally onboard you and your clients.</p>
+      <h2>Be among the first 100 verified trainers.</h2>
+      <p>Free for 6 months. Personal onboarding from the founder. Lifetime founder pricing locked.</p>
       <form class="waitlist-form" id="waitlistForm">
         <input type="text" id="name" placeholder="Your full name" required>
         <input type="email" id="email" placeholder="you@example.com" required>
         <select id="role" required>
           <option value="">I am a...</option>
-          <option value="trainer">Trainer</option>
-          <option value="client">Client</option>
+          <option value="trainer">Certified Online Trainer</option>
+          <option value="client">Fitness Client</option>
           <option value="gym_owner">Gym Owner</option>
+          <option value="other">Other</option>
         </select>
-        <button type="submit">Get Early Access</button>
+        <button type="submit">Apply for Early Access</button>
       </form>
       <div id="status"></div>
+      <p style="margin-top:24px;font-size:14px;opacity:0.7;">We personally review every application. You will hear from us within 48 hours.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Trayn. Built with ❤️ for India's fitness trainers.</p>
-    <p style="margin-top:8px;font-size:13px;">gettrayn.com · Contact: hello@gettrayn.com</p>
+    <p>© 2026 Trayn. Built with respect for India's serious fitness professionals.</p>
+    <p style="margin-top:8px;font-size:13px;">gettrayn.com · hello@gettrayn.com</p>
   </div>
 </footer>
 
@@ -212,18 +311,18 @@ document.getElementById('waitlistForm').addEventListener('submit', async (e) => 
   const role = document.getElementById('role').value
 
   status.style.color = '#9CA3AF'
-  status.textContent = 'Adding you to the list...'
+  status.textContent = 'Submitting your application...'
 
   try {
     const { error } = await supabase.from('waitlist').insert({ name, email, role })
     if (error) throw error
     status.style.color = '#10B981'
-    status.textContent = '✓ You are in! We will email you within 48 hours.'
+    status.textContent = '✓ Application received! We will personally review and email you within 48 hours.'
     e.target.reset()
   } catch (err) {
     status.style.color = '#EF4444'
     if (err.message?.includes('duplicate')) {
-      status.textContent = 'This email is already on the list 🎉'
+      status.textContent = 'You are already on the list 🎉'
     } else {
       status.textContent = 'Something went wrong. Try again or email hello@gettrayn.com'
     }
