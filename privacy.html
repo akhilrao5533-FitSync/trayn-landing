@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg: #0a0a0f;
       --surface: #111118;
@@ -18,236 +17,46 @@
       --text2: #a0a0b0;
       --text3: #5a5a6e;
     }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
-      min-height: 100vh;
-    }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      background: rgba(10,10,15,0.92);
-      backdrop-filter: blur(12px);
-      z-index: 100;
-    }
-
-    .header-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 22px;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.3px;
-    }
-
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; min-height: 100vh; }
+    header { border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .header-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
     .logo span { color: var(--accent); }
-
-    .updated-badge {
-      font-size: 12px;
-      color: var(--text3);
-      font-weight: 500;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-
-    .hero {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 64px 24px 48px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(36px, 6vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -1px;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 16px;
-      color: var(--text2);
-      max-width: 540px;
-      line-height: 1.7;
-    }
-
-    .hero-meta {
-      margin-top: 28px;
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
+    .updated-badge { font-size: 12px; color: var(--text3); font-weight: 500; background: var(--surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; }
+    .hero { max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; border-bottom: 1px solid var(--border); }
+    .hero-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 6vw, 52px); line-height: 1.1; letter-spacing: -1px; color: var(--text); margin-bottom: 20px; }
+    .hero p { font-size: 16px; color: var(--text2); max-width: 540px; line-height: 1.7; }
+    .hero-meta { margin-top: 28px; display: flex; gap: 24px; flex-wrap: wrap; }
     .meta-item { display: flex; flex-direction: column; gap: 2px; }
-
-    .meta-label {
-      font-size: 11px;
-      color: var(--text3);
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
+    .meta-label { font-size: 11px; color: var(--text3); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
     .meta-value { font-size: 13px; color: var(--text2); font-weight: 500; }
-
-    .content {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
-
+    .content { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
     .section { margin-bottom: 52px; }
-
-    .section-number {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 24px;
-      color: var(--text);
-      margin-bottom: 16px;
-      letter-spacing: -0.3px;
-    }
-
-    .section p {
-      color: var(--text2);
-      margin-bottom: 14px;
-      font-size: 15px;
-    }
-
+    .section-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+    .section h2 { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--text); margin-bottom: 16px; letter-spacing: -0.3px; }
+    .section p { color: var(--text2); margin-bottom: 14px; font-size: 15px; }
     .section p:last-child { margin-bottom: 0; }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin-bottom: 52px;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 14px;
-    }
-
-    .data-table th {
-      text-align: left;
-      padding: 10px 14px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text3);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .data-table td {
-      padding: 12px 14px;
-      color: var(--text2);
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
+    .divider { height: 1px; background: var(--border); margin-bottom: 52px; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .data-table th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); border-bottom: 1px solid var(--border); }
+    .data-table td { padding: 12px 14px; color: var(--text2); border-bottom: 1px solid var(--border); vertical-align: top; }
     .data-table tr:last-child td { border-bottom: none; }
-
-    .data-table td:first-child {
-      color: var(--text);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .highlight {
-      background: var(--accent-soft);
-      border: 1px solid rgba(61,77,255,0.2);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 20px 0;
-    }
-
-    .highlight p {
-      color: var(--text) !important;
-      font-size: 14px !important;
-      margin: 0 !important;
-    }
-
-    .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      margin-top: 20px;
-    }
-
-    .contact-card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .contact-card p {
-      color: var(--text2);
-      font-size: 14px;
-      margin-bottom: 16px !important;
-    }
-
-    .contact-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
+    .data-table td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
+    .highlight { background: var(--accent-soft); border: 1px solid rgba(61,77,255,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .highlight p { color: var(--text) !important; font-size: 14px !important; margin: 0 !important; }
+    .warning-box { background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .warning-box p { color: var(--text2) !important; font-size: 14px !important; margin: 0 !important; line-height: 1.7; }
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-top: 20px; }
+    .contact-card h3 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 8px; }
+    .contact-card p { color: var(--text2); font-size: 14px; margin-bottom: 16px !important; }
+    .contact-email { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; transition: opacity 0.2s; }
     .contact-email:hover { opacity: 0.85; }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 24px;
-      text-align: center;
-    }
-
+    .link-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .link-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); color: var(--text2); font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .link-pill:hover { border-color: var(--accent); color: var(--text); }
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; }
     footer p { font-size: 13px; color: var(--text3); }
-
     @media (max-width: 600px) {
       .hero { padding: 40px 20px 36px; }
       .content { padding: 40px 20px 60px; }
@@ -261,7 +70,7 @@
   <header>
     <div class="header-inner">
       <a href="https://gettrayn.com" class="logo">Trayn<span>.</span></a>
-      <span class="updated-badge">Last updated: 31 May 2026</span>
+      <span class="updated-badge">Last updated: 8 Jun 2026</span>
     </div>
   </header>
 
@@ -272,7 +81,7 @@
     <div class="hero-meta">
       <div class="meta-item">
         <span class="meta-label">Effective</span>
-        <span class="meta-value">31 May 2026</span>
+        <span class="meta-value">8 Jun 2026</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Operator</span>
@@ -302,9 +111,51 @@
 
     <div class="section">
       <p class="section-number">02</p>
+      <h2>Health & Medical Disclaimer</h2>
+      <div class="warning-box">
+        <p>Trayn does not provide medical advice, diagnosis, or treatment. All workout plans, nutrition recommendations, progress tracking tools, and fitness insights are provided for informational and educational purposes only. Users should consult a qualified physician or healthcare professional before beginning any exercise or nutrition program.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">03</p>
+      <h2>Trainer Responsibility</h2>
+      <p>Personal trainers using Trayn are independent professionals. Trayn acts solely as a technology platform that enables trainers and clients to communicate and manage fitness programs. Trayn is not responsible for the accuracy, safety, effectiveness, or legality of advice provided by trainers through the platform.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">04</p>
+      <h2>Exercise & Injury Waiver</h2>
+      <p>Users acknowledge that participation in physical exercise involves inherent risks, including injury, illness, or other adverse outcomes. By using Trayn and following any workout recommendations provided through the platform, users voluntarily assume these risks.</p>
+      <p>Trayn strongly recommends consulting a qualified healthcare professional before beginning any new exercise programme.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">05</p>
+      <h2>Nutrition Disclaimer</h2>
+      <p>Nutrition plans and dietary recommendations provided through Trayn are intended for general informational purposes only and do not constitute medical nutrition therapy, diagnosis, or treatment. Users with specific dietary needs or health conditions should consult a registered dietitian or physician.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">06</p>
+      <h2>Results Disclaimer</h2>
+      <p>Individual fitness and health results vary based on numerous factors including genetics, lifestyle, adherence, and individual health conditions. Trayn does not guarantee specific fitness, weight loss, muscle gain, performance, or health outcomes.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">07</p>
       <h2>What I Collect</h2>
       <p>I collect only what is necessary to provide the service.</p>
-
       <table class="data-table">
         <thead>
           <tr>
@@ -318,6 +169,11 @@
             <td>Full name & email</td>
             <td>Trainers & Clients</td>
             <td>Account creation and identification</td>
+          </tr>
+          <tr>
+            <td>Phone number</td>
+            <td>Clients</td>
+            <td>Optional — contact preference</td>
           </tr>
           <tr>
             <td>Age, gender, weight, height</td>
@@ -369,22 +225,39 @@
             <td>Trainers</td>
             <td>Plan access and subscription level</td>
           </tr>
+          <tr>
+            <td>Push notification tokens</td>
+            <td>Trainers & Clients</td>
+            <td>Sending workout reminders and alerts</td>
+          </tr>
         </tbody>
       </table>
-
       <p>I do not collect location data, contacts, or any device sensor data beyond what you explicitly provide.</p>
     </div>
 
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">03</p>
+      <p class="section-number">08</p>
+      <h2>Camera & Media Permissions</h2>
+      <p>Trayn requests access to your camera and photo library solely for the following purposes:</p>
+      <p>— <strong style="color: var(--text);">Progress photos</strong> — clients may upload body progress photos for visual tracking with their trainer.</p>
+      <p>— <strong style="color: var(--text);">Form check videos</strong> — clients may upload exercise form videos for review and feedback by their trainer.</p>
+      <p>— <strong style="color: var(--text);">Profile avatar</strong> — trainers and clients may upload a profile photo.</p>
+      <p>Trayn does not access, read, or store any media unrelated to these features. Camera and photo library access is only triggered when you explicitly initiate an upload action within the app.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">09</p>
       <h2>How I Use Your Data</h2>
       <p>Your data is used solely to operate and improve Trayn. Specifically:</p>
       <p>— To provide trainers with the tools to manage their clients, assign workout and diet plans, and track progress.</p>
       <p>— To give clients a personalised training experience including progress scoring, streak tracking, and coach feedback.</p>
       <p>— To process payments securely through Razorpay.</p>
       <p>— To send transactional emails (account-related notifications) via Resend.</p>
+      <p>— To send push notifications for session reminders, streak alerts, and payment updates via Expo Push Notifications.</p>
       <p>— To improve the platform based on aggregated, anonymised usage patterns.</p>
       <div class="highlight">
         <p>I do not sell your data. I do not use your data for advertising. I do not share your data with any third party except the infrastructure providers listed below.</p>
@@ -394,7 +267,7 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">04</p>
+      <p class="section-number">10</p>
       <h2>Where Your Data Lives</h2>
       <p>All data is stored on Supabase infrastructure hosted in the <strong style="color: var(--text);">ap-south-1 (Mumbai, India)</strong> AWS region. Your data does not leave India.</p>
       <p>Progress photos and form check videos are stored in private Supabase storage buckets. They are not publicly accessible and are only visible to you and your assigned trainer.</p>
@@ -403,10 +276,9 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">05</p>
+      <p class="section-number">11</p>
       <h2>Third-Party Services</h2>
       <p>I use a small number of trusted third-party services to operate Trayn:</p>
-
       <table class="data-table">
         <thead>
           <tr>
@@ -432,20 +304,24 @@
             <td>Name, email address</td>
           </tr>
           <tr>
+            <td>Expo</td>
+            <td>Push notifications</td>
+            <td>Device push token</td>
+          </tr>
+          <tr>
             <td>Vercel</td>
             <td>Web hosting</td>
             <td>No personal data stored</td>
           </tr>
         </tbody>
       </table>
-
       <p>Each of these providers has their own privacy policy. I encourage you to review them if you have concerns.</p>
     </div>
 
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">06</p>
+      <p class="section-number">12</p>
       <h2>Data Retention</h2>
       <p>I retain your data for as long as your account is active. When you delete your account, all your personal data — including profile information, workout logs, diet logs, progress photos, and form check videos — is permanently deleted within 24 hours.</p>
       <p>If you are a client and request data deletion without deleting your account, your trainer is notified and required to action the request within 30 days.</p>
@@ -455,7 +331,19 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">07</p>
+      <p class="section-number">13</p>
+      <h2>Account Deletion</h2>
+      <p>You can delete your account and all associated data at any time directly from the app — go to your Profile screen and select Delete Account. All data is permanently removed within 24 hours.</p>
+      <p>For step-by-step instructions or to request deletion via email, visit:</p>
+      <div class="link-row">
+        <a href="https://gettrayn.com/delete-account" class="link-pill">gettrayn.com/delete-account →</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">14</p>
       <h2>Your Rights</h2>
       <p>Under the Digital Personal Data Protection Act, 2023 (DPDPA) and applicable Indian law, you have the right to:</p>
       <p>— <strong style="color: var(--text);">Access</strong> the personal data I hold about you.</p>
@@ -470,13 +358,13 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">08</p>
+      <p class="section-number">15</p>
       <h2>Grievance Officer</h2>
       <p>In accordance with the Digital Personal Data Protection Act, 2023, I have designated a Grievance Officer to address any concerns or complaints about the handling of your personal data.</p>
       <div class="contact-card">
         <h3>Akhil Rao Takkallapally</h3>
         <p>Grievance Officer · Trayn · Bengaluru, Karnataka, India</p>
-        <a class="contact-email" href="mailto:akhilrao5533@gmail.com">akhilrao5533@gmail.com</a>
+        <a class="contact-email" href="mailto:akhil@gettrayn.com">akhil@gettrayn.com</a>
       </div>
       <p style="margin-top: 16px;">Grievances will be acknowledged within 48 hours and resolved within 30 days of receipt.</p>
     </div>
@@ -484,7 +372,7 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">09</p>
+      <p class="section-number">16</p>
       <h2>Children's Privacy</h2>
       <p>Trayn is not intended for use by anyone under the age of 18. I do not knowingly collect personal data from minors. If you believe a minor has created an account, please contact me and I will delete the account promptly.</p>
     </div>
@@ -492,7 +380,7 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">10</p>
+      <p class="section-number">17</p>
       <h2>Security</h2>
       <p>I take security seriously. All data is transmitted over HTTPS. Database access is protected by Row Level Security (RLS) policies — meaning each user can only access their own data. Sensitive operations such as account deletion are handled server-side with restricted service role keys, not exposed to the client.</p>
       <p>No system is perfectly secure. If you discover a vulnerability, please report it to me responsibly at the email below.</p>
@@ -501,7 +389,7 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">11</p>
+      <p class="section-number">18</p>
       <h2>Changes to This Policy</h2>
       <p>I may update this policy as the product evolves. When I make material changes, I will update the "Last updated" date at the top of this page. Continued use of Trayn after changes constitutes acceptance of the updated policy.</p>
       <p>I recommend reviewing this page periodically.</p>
@@ -510,13 +398,26 @@
     <div class="divider"></div>
 
     <div class="section">
-      <p class="section-number">12</p>
+      <p class="section-number">19</p>
+      <h2>Related Policies</h2>
+      <p>For information about our Terms of Service, Refund Policy, and account deletion process, please visit:</p>
+      <div class="link-row">
+        <a href="https://gettrayn.com/terms" class="link-pill">Terms of Service →</a>
+        <a href="https://gettrayn.com/refunds" class="link-pill">Refund Policy →</a>
+        <a href="https://gettrayn.com/delete-account" class="link-pill">Delete Account →</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">20</p>
       <h2>Contact</h2>
       <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out directly.</p>
       <div class="contact-card">
         <h3>Akhil Rao Takkallapally</h3>
         <p>Operator, Trayn · Bengaluru, Karnataka, India</p>
-        <a class="contact-email" href="mailto:akhilrao5533@gmail.com">akhilrao5533@gmail.com</a>
+        <a class="contact-email" href="mailto:akhil@gettrayn.com">akhil@gettrayn.com</a>
       </div>
     </div>
 
