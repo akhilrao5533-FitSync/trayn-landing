@@ -3,332 +3,582 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trayn — The Private Workspace for Certified Online Personal Trainers in India</title>
-<meta name="description" content="The private workspace for serious online personal trainers in India. Replace WhatsApp + Sheets + Zoom with one professional workspace. Privacy-first. Trainer-only. Made in India.">
+<title>Trayn — The Private Workspace for Online Personal Trainers in India</title>
+<meta name="description" content="Replace WhatsApp, Sheets, and Zoom with one professional workspace. Built exclusively for certified online personal trainers in India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #fff; color: #111827; line-height: 1.6; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-nav { padding: 20px 0; position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid #f3f4f6; }
-nav .container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: 900; color: #6C63FF; }
-.nav-login { color: #6C63FF; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 16px; padding: 10px 16px; border-radius: 10px; transition: background 0.2s; }
-.nav-login:hover { background: #F3F4F6; }
-.nav-buttons { display: flex; align-items: center; gap: 8px; }
-.nav-cta { background: #6C63FF; color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; }
-.hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(180deg, #F5F3FF 0%, #fff 100%); }
-.badge { display: inline-block; background: #EEF2FF; color: #6C63FF; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; margin-bottom: 24px; }
-h1 { font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
-h1 span { color: #6C63FF; }
-.subtitle { font-size: 20px; color: #6B7280; max-width: 680px; margin: 0 auto 36px; }
-.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn-primary { background: #6C63FF; color: #fff; padding: 16px 28px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; transition: transform 0.15s; display: inline-block; border: none; cursor: pointer; }
-.btn-primary:hover { transform: translateY(-2px); }
-.btn-secondary { background: #fff; color: #111827; padding: 16px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 16px; border: 2px solid #E5E7EB; display: inline-block; }
-section { padding: 80px 0; }
-.section-title { font-size: 40px; font-weight: 900; text-align: center; margin-bottom: 12px; letter-spacing: -1px; }
-.section-sub { text-align: center; color: #6B7280; font-size: 18px; max-width: 600px; margin: 0 auto 50px; }
-.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-.problem-card { background: #FEF2F2; border: 1px solid #FECACA; padding: 24px; border-radius: 16px; }
-.problem-card .icon { font-size: 32px; margin-bottom: 12px; }
-.problem-card h3 { font-size: 18px; margin-bottom: 8px; }
-.problem-card p { color: #7F1D1D; font-size: 14px; }
-.solution { background: #F9FAFB; }
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.feature-card { background: #fff; padding: 30px; border-radius: 18px; border: 1px solid #E5E7EB; transition: transform 0.2s, box-shadow 0.2s; }
-.feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(108,99,255,0.1); }
-.feature-card .icon { font-size: 40px; margin-bottom: 16px; }
-.feature-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
-.feature-card p { color: #6B7280; font-size: 15px; }
-.not-for-everyone { background: #111827; color: #fff; padding: 80px 24px; border-radius: 24px; margin: 40px 0; }
-.not-for-everyone h2 { font-size: 36px; font-weight: 900; margin-bottom: 24px; text-align: center; }
-.nfe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 800px; margin: 0 auto; }
-.nfe-col { padding: 24px; border-radius: 16px; }
-.nfe-yes { background: rgba(108, 99, 255, 0.15); border: 2px solid #6C63FF; }
-.nfe-no { background: rgba(220, 38, 38, 0.1); border: 2px solid #DC2626; }
-.nfe-col h3 { font-size: 22px; margin-bottom: 16px; font-weight: 800; }
-.nfe-col ul { list-style: none; }
-.nfe-col li { padding: 8px 0; font-size: 15px; }
-.nfe-yes li::before { content: "✓ "; color: #6C63FF; font-weight: 900; margin-right: 6px; }
-.nfe-no li::before { content: "✗ "; color: #DC2626; font-weight: 900; margin-right: 6px; }
-.privacy { background: linear-gradient(135deg, #6C63FF 0%, #8B5CF6 100%); color: #fff; text-align: center; padding: 80px 24px; border-radius: 24px; margin: 40px 0; }
-.privacy h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; }
-.privacy p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-.cert-section { background: #F9FAFB; padding: 80px 0; }
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; max-width: 800px; margin: 40px auto 0; }
-.cert-badge { background: #fff; padding: 24px 16px; border-radius: 16px; text-align: center; border: 2px solid #E5E7EB; font-weight: 800; color: #111827; transition: border-color 0.2s; }
-.cert-badge:hover { border-color: #6C63FF; }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
-.price-card { background: #fff; border: 2px solid #E5E7EB; padding: 32px; border-radius: 18px; text-align: center; }
-.price-card.featured { border-color: #6C63FF; position: relative; }
-.price-card.featured::before { content: "Most Popular"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #6C63FF; color: #fff; padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; }
-.price-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
-.price-card .price { font-size: 40px; font-weight: 900; color: #6C63FF; margin-bottom: 4px; }
-.price-card .price-sub { color: #6B7280; font-size: 14px; margin-bottom: 24px; }
-.price-card ul { list-style: none; text-align: left; margin-bottom: 24px; }
-.price-card ul li { padding: 8px 0; color: #374151; font-size: 14px; }
-.price-card ul li::before { content: "✓ "; color: #10B981; font-weight: 900; margin-right: 6px; }
-.waitlist { background: #111827; color: #fff; text-align: center; padding: 80px 24px; border-radius: 24px; margin: 40px 0; }
-.waitlist h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; }
-.waitlist p { font-size: 18px; opacity: 0.8; margin-bottom: 32px; }
-.waitlist-form { display: flex; gap: 8px; max-width: 480px; margin: 0 auto; flex-wrap: wrap; }
-.waitlist-form input { flex: 1; min-width: 200px; padding: 16px 20px; border-radius: 12px; border: none; font-size: 16px; font-family: inherit; }
-.waitlist-form select { padding: 16px 20px; border-radius: 12px; border: none; font-size: 16px; font-family: inherit; background: #fff; }
-.waitlist-form button { background: #6C63FF; color: #fff; padding: 16px 28px; border-radius: 12px; border: none; font-weight: 800; font-size: 16px; cursor: pointer; }
-#status { margin-top: 16px; font-weight: 700; min-height: 24px; }
-footer { padding: 40px 0; text-align: center; color: #9CA3AF; border-top: 1px solid #E5E7EB; }
-@media (max-width: 640px) {
-  h1 { font-size: 38px; }
-  .section-title { font-size: 30px; }
-  .privacy h2, .waitlist h2, .not-for-everyone h2 { font-size: 28px; }
-  .nfe-grid { grid-template-columns: 1fr; }
+:root {
+  --bg: #08090B;
+  --bg1: #0E1013;
+  --bg2: #15171C;
+  --bg3: #1B1E24;
+  --accent: #3d4dff;
+  --accent2: #818CF8;
+  --accent-soft: rgba(61,77,255,0.12);
+  --accent-line: rgba(61,77,255,0.25);
+  --text: #F4F4F5;
+  --text2: #A3A8B3;
+  --text3: #6B7280;
+  --text4: #4B5563;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.10);
+  --ok: #34D399;
+  --warn: #FBBF24;
+  --danger: #F87171;
+  --radius: 16px;
+  --radius-sm: 10px;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,9,11,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-size:22px;font-weight:700;letter-spacing:-1px;color:var(--text);}
+.nav-logo span{color:var(--accent2);}
+.nav-links{display:flex;align-items:center;gap:8px;}
+.nav-link{font-size:14px;color:var(--text3);padding:8px 14px;border-radius:8px;transition:color .2s,background .2s;}
+.nav-link:hover{color:var(--text);background:var(--bg2);}
+.nav-cta{background:var(--accent);color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden;}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(ellipse at center,rgba(61,77,255,0.12) 0%,transparent 70%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:780px;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:999px;padding:7px 16px;font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px;}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+h1{font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.05;letter-spacing:-2.5px;margin-bottom:20px;color:var(--text);}
+h1 .dim{color:var(--text3);}
+h1 .accent{color:var(--accent2);}
+.hero-sub{font-size:18px;color:var(--text2);max-width:560px;margin:0 auto 40px;line-height:1.7;font-weight:300;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 28px;border-radius:var(--radius-sm);font-size:15px;font-weight:600;display:inline-block;transition:transform .15s,opacity .15s;border:none;cursor:pointer;}
+.btn-primary:hover{transform:translateY(-2px);opacity:.9;}
+.btn-ghost{background:transparent;color:var(--text2);padding:14px 28px;border-radius:var(--radius-sm);font-size:15px;font-weight:500;display:inline-block;border:1px solid var(--border2);transition:border-color .2s,color .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.25);color:var(--text);}
+.hero-note{margin-top:20px;font-size:13px;color:var(--text4);}
+
+/* TICKER */
+.ticker-wrap{padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--bg1);margin-top:0;}
+.ticker{display:flex;gap:48px;animation:ticker 30s linear infinite;white-space:nowrap;}
+.ticker-item{font-size:13px;color:var(--text3);font-family:'DM Mono',monospace;display:flex;align-items:center;gap:10px;}
+.ticker-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent2);}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* PROBLEM */
+.section{padding:96px 24px;}
+.container{max-width:1100px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:12px;}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px;}
+.section-sub{font-size:17px;color:var(--text2);max-width:600px;margin-bottom:52px;line-height:1.7;font-weight:300;}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.problem-card{background:var(--bg1);padding:28px;transition:background .2s;}
+.problem-card:hover{background:var(--bg2);}
+.problem-icon{font-size:28px;margin-bottom:14px;color:var(--error);}
+.problem-card h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--text);}
+.problem-card p{font-size:14px;color:var(--text3);line-height:1.6;}
+.problem-x{display:inline-block;background:rgba(248,113,113,.12);color:var(--danger);font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:4px;margin-bottom:12px;text-transform:uppercase;}
+
+/* FEATURES */
+.features-bg{background:var(--bg1);}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}@media(max-width:900px){.feature-grid{grid-template-columns:repeat(2,1fr);}}@media(max-width:560px){.feature-grid{grid-template-columns:1fr;}}
+.feature-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .2s,transform .2s;}
+.feature-card:hover{border-color:var(--border2);transform:translateY(-3px);}
+.feature-icon-wrap{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);border:1px solid var(--accent-line);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px;color:var(--accent2);}
+.feature-card h3{font-size:17px;font-weight:600;margin-bottom:8px;letter-spacing:-.3px;}
+.feature-card p{font-size:14px;color:var(--text3);line-height:1.65;}
+.feature-tag{display:inline-block;background:rgba(52,211,153,.1);color:var(--ok);font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;margin-top:12px;letter-spacing:.5px;}
+
+/* TIERS */
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:1100px;}
+.tier-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;transition:border-color .2s;}
+.tier-card.featured{border-color:var(--accent-line);background:linear-gradient(135deg,rgba(61,77,255,.06) 0%,var(--bg1) 100%);}
+.tier-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;letter-spacing:.5px;white-space:nowrap;}
+.tier-icon{font-size:32px;margin-bottom:12px;}
+.tier-name{font-size:18px;font-weight:700;letter-spacing:-.5px;margin-bottom:4px;}
+.tier-price{font-size:36px;font-weight:700;letter-spacing:-1.5px;color:var(--accent2);margin-bottom:4px;}
+.tier-price span{font-size:16px;font-weight:400;color:var(--text3);}
+.tier-desc{font-size:13px;color:var(--text3);margin-bottom:20px;line-height:1.6;}
+.tier-divider{height:1px;background:var(--border);margin-bottom:20px;}
+.tier-feature{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:14px;color:var(--text2);}
+.tier-feature::before{content:'✓';color:var(--ok);font-weight:700;flex-shrink:0;margin-top:1px;}
+.tier-cta{display:block;text-align:center;background:var(--accent);color:#fff;padding:13px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;margin-top:20px;transition:opacity .2s;}
+.tier-cta:hover{opacity:.85;}
+.tier-cta.ghost{background:transparent;border:1px solid var(--border2);color:var(--text2);}
+.tier-cta.ghost:hover{border-color:rgba(255,255,255,.25);color:var(--text);}
+
+/* VERIFICATION */
+.verify-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.verify-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+.verify-num{font-size:40px;font-weight:700;letter-spacing:-2px;color:var(--accent2);margin-bottom:4px;}
+.verify-label{font-size:13px;color:var(--text3);}
+
+/* NOT FOR EVERYONE */
+.nfe-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:52px;}
+.nfe-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;}
+.nfe-col{padding:24px;border-radius:var(--radius);}
+.nfe-yes{background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.15);}
+.nfe-no{background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.12);}
+.nfe-col h3{font-size:16px;font-weight:700;margin-bottom:16px;}
+.nfe-yes h3{color:var(--ok);}
+.nfe-no h3{color:var(--danger);}
+.nfe-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:14px;color:var(--text2);line-height:1.5;}
+.nfe-yes .nfe-item::before{content:'✓';color:var(--ok);font-weight:700;flex-shrink:0;}
+.nfe-no .nfe-item::before{content:'✗';color:var(--danger);font-weight:700;flex-shrink:0;}
+
+/* PRIVACY */
+.privacy-wrap{background:linear-gradient(135deg,rgba(61,77,255,.12) 0%,rgba(61,77,255,.04) 100%);border:1px solid var(--accent-line);border-radius:20px;padding:64px 52px;text-align:center;}
+.privacy-wrap h2{font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-1.5px;margin-bottom:16px;}
+.privacy-wrap p{font-size:17px;color:var(--text2);max-width:600px;margin:0 auto;line-height:1.7;font-weight:300;}
+
+/* SIGNUP CTA */
+.signup-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:64px 52px;text-align:center;}
+.signup-wrap h2{font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-1.5px;margin-bottom:12px;}
+.signup-wrap .sub{font-size:17px;color:var(--text2);margin-bottom:40px;font-weight:300;line-height:1.7;}
+.signup-perks{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.signup-perk{background:rgba(61,77,255,0.10);border:1px solid rgba(61,77,255,0.20);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--accent2);font-weight:600;}
+.signup-note{font-size:13px;color:var(--text4);margin-top:16px;}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:64px;}
+.stat-cell{background:var(--bg1);padding:24px;text-align:center;}
+.stat-num{font-size:32px;font-weight:700;letter-spacing:-1.5px;color:var(--text);}
+.stat-num span{color:var(--accent2);}
+.stat-label{font-size:12px;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:1px;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
+footer p{font-size:13px;color:var(--text4);}
+footer a{color:var(--text3);transition:color .2s;}
+footer a:hover{color:var(--text);}
+.footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .problem-grid{grid-template-columns:1fr 1fr;}
+  .tier-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){.fund-stats{grid-template-columns:1fr !important;max-width:100% !important;}
+  .problem-grid{grid-template-columns:1fr;}
+  .nfe-grid{grid-template-columns:1fr;}
+  .tier-grid{grid-template-columns:1fr;}
+  .nfe-wrap{padding:32px 20px;}
+  .privacy-wrap,.signup-wrap{padding:40px 24px;}
+  .nav-links .nav-link{display:none;}
+  .section{padding:64px 20px;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .verify-grid{grid-template-columns:1fr 1fr;}
+  h1{letter-spacing:-1.5px;}
+  .hero{padding:80px 20px 60px;}
+}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* CURSOR GLOW */
+.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(61,77,255,.07) 0%,transparent 70%);pointer-events:none;transform:translate(-50%,-50%);transition:left .1s,top .1s;z-index:0;}
 </style>
 </head>
 <body>
 
+<div class="cursor-glow" id="cursorGlow"></div>
+
 <nav>
-  <div class="container">
-    <div class="logo">Trayn</div>
-    <div class="nav-buttons">
-      <a href="https://app.gettrayn.com" class="nav-login">Login</a>
-      <a href="https://app.gettrayn.com" class="nav-cta">Sign Up</a>
-    </div>
+  <div class="nav-logo">trayn<span>.</span></div>
+  <div class="nav-links">
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="https://app.gettrayn.com" class="nav-cta">Login →</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <div class="badge">🇮🇳 For Online Personal Trainers in India</div>
-    <h1>Stop running your business on <span>WhatsApp</span>.</h1>
-    <p class="subtitle">The private workspace for serious online personal trainers in India. Built for the trainers who care about doing things right.</p>
-    <div class="cta-row">
-      <a href="#waitlist" class="btn-primary">Apply for Early Access</a>
-      <a href="#features" class="btn-secondary">See How It Works</a>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot"></span>
+      Now live · India's first verified trainer workspace
     </div>
-    <p style="margin-top:24px;color:#9CA3AF;font-size:14px;">Free for first 100 verified trainers · No credit card required</p>
+    <h1 class="reveal">Your fitness business<br>deserves better than<br><span class="dim">WhatsApp</span> <span class="accent">&amp; Sheets.</span></h1>
+    <p class="hero-sub reveal">The private workspace built exclusively for serious personal trainers in India. Client workouts, diet plans, progress, messaging — all in one professional platform.</p>
+    <div class="hero-btns reveal">
+      <a href="https://app.gettrayn.com" class="btn-primary">Start free trial →</a>
+      <a href="#features" class="btn-ghost">See how it works</a>
+    </div>
+    <p class="hero-note reveal">30-day free trial · No credit card required · Made in India 🇮🇳</p>
   </div>
 </section>
 
-<section id="problem">
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker">
+    <span class="ticker-item">Workout Plans</span>
+    <span class="ticker-item">Diet Templates</span>
+    <span class="ticker-item">Progress Tracking</span>
+    <span class="ticker-item">Form Check Videos</span>
+    <span class="ticker-item">Private Messaging</span>
+    <span class="ticker-item">Session Scheduling</span>
+    <span class="ticker-item">Razorpay Billing</span>
+    <span class="ticker-item">Streak Psychology</span>
+    <span class="ticker-item">DPDPA Compliant</span>
+    <span class="ticker-item">Offline Support</span>
+    <span class="ticker-item">Workout Plans</span>
+    <span class="ticker-item">Diet Templates</span>
+    <span class="ticker-item">Progress Tracking</span>
+    <span class="ticker-item">Form Check Videos</span>
+    <span class="ticker-item">Private Messaging</span>
+    <span class="ticker-item">Session Scheduling</span>
+    <span class="ticker-item">Razorpay Billing</span>
+    <span class="ticker-item">Streak Psychology</span>
+    <span class="ticker-item">DPDPA Compliant</span>
+    <span class="ticker-item">Offline Support</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section">
   <div class="container">
-    <h2 class="section-title">Sound familiar?</h2>
-    <p class="section-sub">Online trainers in India juggle 6 different tools just to coach one client.</p>
-    <div class="problem-grid">
-      <div class="problem-card"><div class="icon">📱</div><h3>WhatsApp chaos</h3><p>Workout plans lost in chat. Client numbers exposed. No structure.</p></div>
-      <div class="problem-card"><div class="icon">📊</div><h3>Google Sheets nightmares</h3><p>Plans break on mobile. Tracking is manual. Looks unprofessional.</p></div>
-      <div class="problem-card"><div class="icon">📹</div><h3>Zoom for form checks</h3><p>Separate app. No workout context. Awkward switching.</p></div>
-      <div class="problem-card"><div class="icon">💸</div><h3>Paytm for payments</h3><p>No invoices. No subscriptions. No payment history.</p></div>
+    <div class="section-label reveal">The problem</div>
+    <h2 class="section-title reveal">You're running a serious business<br>on <span style="color:#F87171;font-weight:800;letter-spacing:0.5px;">BROKEN</span> tools built for something else.</h2>
+    <p class="section-sub reveal">The average personal trainer in India juggles 6 different apps just to coach one client. Here's what that's actually costing you.</p>
+    <div class="problem-grid reveal">
+      <div class="problem-card">
+        <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>WhatsApp chaos</h3>
+        <p>Workout plans buried in chat. Your personal number exposed. Zero structure. Client messages lost in personal conversations.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Google Sheets nightmares</h3>
+        <p>Plans break on mobile. Tracking is manual. No logging, no adherence data, no history. Looks unprofessional to clients.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Progress photos in chats</h3>
+        <p>Client transformation photos floating in WhatsApp backups forever. No privacy guarantee. DPDPA compliance? Impossible.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3>Manual payment collection</h3>
+        <p>Chasing clients for payment every month. No invoices. No subscription tracking. No payment history. All on Paytm or UPI.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <h3>Zoom for every check-in</h3>
+        <p>Scheduling video calls across WhatsApp and Zoom. No session history. No automatic reminders. Every call is a manual back-and-forth.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>Calendly for scheduling</h3>
+        <p>Managing sessions across Calendly, Google Calendar, and WhatsApp. Missed sessions, no count tracking, no automated reminders.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="background:#fff;">
+<!-- FEATURES -->
+<section class="section features-bg" id="features">
   <div class="container">
-    <div class="not-for-everyone">
-      <h2>Trayn isn't for everyone.</h2>
-      <p style="text-align:center;font-size:18px;opacity:0.85;max-width:600px;margin:0 auto 40px;">We built Trayn because serious trainers deserve professional tools — and clients deserve to know exactly who's coaching them.</p>
+    <div class="section-label reveal">The solution</div>
+    <h2 class="section-title reveal">One app. Everything your<br>coaching business needs.</h2>
+    <p class="section-sub reveal">Built specifically for the personal trainer operating in India. Every feature designed to replace a broken workflow.</p>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 8h12M6 16h12M3 8h3M18 8h3M3 16h3M18 16h3"/></svg></div>
+        <h3>Workout Plans</h3>
+        <p>Build plans once, assign to any client. Clients log sets, reps, and weight in real-time. Offline support with auto-sync.</p>
+        <span class="feature-tag">Replaces Google Sheets</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2v10l6.5 6.5"/></svg></div>
+        <h3>Diet Plans</h3>
+        <p>Create meal plans with calories, macros, and food items. Smart unit defaults for Indian foods. Goal-based scaling built in.</p>
+        <span class="feature-tag">Replaces WhatsApp PDFs</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <h3>Progress Tracking</h3>
+        <p>Weight, body fat, measurements, and progress photos — all in private encrypted storage. Adherence charts and streak tracking.</p>
+        <span class="feature-tag">Replaces manual logging</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <h3>Form Check Videos</h3>
+        <p>Clients upload exercise videos. You review and leave timestamped feedback. No more scheduling Zoom calls for 2-minute corrections.</p>
+        <span class="feature-tag">Replaces Zoom</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Private Messaging</h3>
+        <p>Real-time chat between trainer and client. No phone numbers exchanged. Purely professional. Full message history.</p>
+        <span class="feature-tag">Replaces WhatsApp</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>Session Scheduling</h3>
+        <p>Book, track, and manage all sessions in a calendar. Missed session detection. Automatic session count tracking per month.</p>
+        <span class="feature-tag">Replaces manual tracking</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3>Payment Collection</h3>
+        <p>Collect client payments via Razorpay. Set autopay per client or track manually. No more chasing payments on UPI. Full payment history in one place.</p>
+        <span class="feature-tag">Replaces UPI chasing</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <h3>Video Calls</h3>
+        <p>Built-in video sessions via Google Meet — no Zoom, no separate links. 15 sessions/month on Verified and Certified. Unlimited on Pro. Session history tracked automatically.</p>
+        <span class="feature-tag">Replaces Zoom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="stats-row reveal">
+      <div class="stat-cell">
+        <div class="stat-num"><span>6</span> → 1</div>
+        <div class="stat-label">Apps replaced</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num"><span>0</span></div>
+        <div class="stat-label">Phone numbers exposed</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num"><span>100%</span></div>
+        <div class="stat-label">DPDPA compliant</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num"><span>₹0</span></div>
+        <div class="stat-label">Setup fee</div>
+      </div>
+    </div>
+
+    <!-- NOT FOR EVERYONE -->
+    <div class="nfe-wrap reveal">
+      <div class="section-label" style="text-align:center">Who it's for</div>
+      <h2 class="section-title" style="text-align:center;max-width:600px;margin:0 auto 8px;">Trayn isn't for everyone.<br>That's the point.</h2>
+      <p style="text-align:center;color:var(--text2);font-size:16px;font-weight:300;max-width:560px;margin:0 auto;">Built for serious trainers. Every account is reviewed before being fully activated.</p>
       <div class="nfe-grid">
         <div class="nfe-col nfe-yes">
-          <h3>✓ Trayn IS for</h3>
-          <ul>
-            <li>Online personal trainers based in India</li>
-            <li>Trainers with real fitness knowledge (formal cert OR years of verified experience)</li>
-            <li>NASM, ACE, ISSA, ACSM, REPS India, K11, FITINDIA certified trainers</li>
-            <li>Trainers building serious client bases</li>
-            <li>Trainers who care about doing things professionally</li>
-            <li>Indian trainers coaching clients globally</li>
-          </ul>
+          <h3>✓ Trayn is for</h3>
+          <div class="nfe-item">Online personal trainers based in India</div>
+          <div class="nfe-item">Independent in-person trainers with their own clients</div>
+          <div class="nfe-item">Trainers with real fitness credentials (NASM, ACE, K11, ISSA, REPS India, FITINDIA)</div>
+          <div class="nfe-item">Experienced trainers with 2+ years of verified coaching</div>
+          <div class="nfe-item">Trainers building serious, structured client relationships</div>
+          <div class="nfe-item">Indian trainers coaching NRI or global clients</div>
         </div>
         <div class="nfe-col nfe-no">
-          <h3>✗ Trayn is NOT for</h3>
-          <ul>
-            <li>Yoga teachers, dieticians, nutritionists (different professions)</li>
-            <li>Influencer "fitness coaches" with no real training experience</li>
-            <li>Anyone trying to mass-onboard hundreds of low-touch clients</li>
-            <li>Offline-only gym trainers (Trayn is for online coaching)</li>
-            <li>Wellness coaches, life coaches, energy healers</li>
-            <li>People who can't pass identity + reference verification</li>
-          </ul>
+          <h3>✗ Trayn is not for</h3>
+          <div class="nfe-item">Yoga teachers, dieticians, and nutritionists</div>
+          <div class="nfe-item">Influencer "coaches" with no real training background</div>
+          <div class="nfe-item">Anyone doing mass low-touch client onboarding</div>
+          <div class="nfe-item">Gym owners managing staff or members</div>
+          <div class="nfe-item">People who can't pass identity + reference verification</div>
         </div>
       </div>
-      <p style="text-align:center;margin-top:32px;font-size:16px;opacity:0.8;">Trayn welcomes serious trainers at every stage — verified by ID and references, or certified by NASM/ACE/etc. You'll be evaluated by real humans, not algorithms.</p>
     </div>
   </div>
 </section>
 
-<section id="features" class="solution">
+<!-- VERIFICATION -->
+<section class="section features-bg">
   <div class="container">
-    <h2 class="section-title">One app. Everything your business needs.</h2>
-    <p class="section-sub">Built specifically for the certified online trainer.</p>
-    <div class="feature-grid">
-      <div class="feature-card"><div class="icon">💪</div><h3>Workout Plans</h3><p>Build templates once, assign to any client. Track sets, reps, weight, and effort in real-time.</p></div>
-      <div class="feature-card"><div class="icon">🥗</div><h3>Diet Plans</h3><p>Create meal plans with calories, macros, and food items. Clients see exactly what to eat.</p></div>
-      <div class="feature-card"><div class="icon">📊</div><h3>Progress Tracking</h3><p>Weight, body fat, measurements, and progress photos — all in one private gallery.</p></div>
-      <div class="feature-card"><div class="icon">📹</div><h3>In-App Form Check Calls</h3><p>Video calls with workout context visible side-by-side. No more Zoom links.</p></div>
-      <div class="feature-card"><div class="icon">💬</div><h3>Private Messaging</h3><p>Real-time chat. No phone numbers exchanged. Pure professional.</p></div>
-      <div class="feature-card"><div class="icon">🔒</div><h3>Privacy First</h3><p>Progress photos in encrypted private storage. Client data isolated. WhatsApp-free.</p></div>
+    <div class="section-label reveal">Plans & pricing</div>
+    <h2 class="section-title reveal">Three levels of trust.<br>Every trainer verified by humans.</h2>
+    <p class="section-sub reveal">Clients see your tier on your profile. Total transparency about who's coaching them.</p>
+    <div class="verify-grid reveal" style="margin-bottom:48px;">
+      <div class="verify-card">
+        <div class="verify-num">47</div>
+        <div class="verify-label">Trainers approved last month</div>
+      </div>
+      <div class="verify-card">
+        <div class="verify-num">23</div>
+        <div class="verify-label">Applications rejected</div>
+      </div>
+      <div class="verify-card">
+        <div class="verify-num">48h</div>
+        <div class="verify-label">Average review time</div>
+      </div>
+      <div class="verify-card">
+        <div class="verify-num">100%</div>
+        <div class="verify-label">Human reviewed (no algorithms)</div>
+      </div>
+    </div>
+    <div class="tier-grid reveal" id="pricing">
+      <div class="tier-card">
+        <div class="tier-name" style="color:#FBBF24;">Studio</div>
+        <div class="tier-price">₹699<span>/mo</span></div>
+        <div class="tier-desc">For trainers who work with clients in person. Full platform access — workout plans, progress tracking, payments, and messaging. No video calls or form checks.</div>
+        <div class="tier-divider"></div>
+        <div class="tier-feature">Unlimited clients</div>
+        <div class="tier-feature">Workout & diet plans</div>
+        <div class="tier-feature">Progress tracking + photos</div>
+        <div class="tier-feature">Payment collection + autopay</div>
+        <div class="tier-feature">Client messaging</div>
+        <div class="tier-feature">Accountability dashboard</div>
+        <a href="https://app.gettrayn.com" class="tier-cta ghost">Start free trial</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name" style="color:#34D399;">Verified</div>
+        <div class="tier-price">₹999<span>/mo</span></div>
+        <div class="tier-desc">For online personal trainers. Identity and experience verified by Trayn. Full platform access including video calls, form checks, and marketplace listing.</div>
+        <div class="tier-divider"></div>
+        <div class="tier-feature">Unlimited clients</div>
+        <div class="tier-feature">Workout & diet plans</div>
+        <div class="tier-feature">Progress tracking + photos</div>
+        <div class="tier-feature">Video calls (15/mo)</div>
+        <div class="tier-feature">Form check uploads</div>
+        <div class="tier-feature">Payment collection + autopay</div>
+        <div class="tier-feature">Marketplace listing</div>
+        <a href="https://app.gettrayn.com" class="tier-cta ghost">Start free trial</a>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-name" style="color:#818CF8;">Certified</div>
+        <div class="tier-price">₹1,499<span>/mo</span></div>
+        <div class="tier-desc">Your certification is your credibility — verified and displayed by Trayn. Get a dedicated trust badge and enhanced marketplace visibility, helping clients find and choose you with confidence.</div>
+        <div class="tier-divider"></div>
+        <div class="tier-feature">Everything in Verified</div>
+        <div class="tier-feature">Certification verified by Trayn</div>
+        <div class="tier-feature">Dedicated trust badge on profile</div>
+        <div class="tier-feature">Enhanced marketplace visibility</div>
+        <div class="tier-feature">Higher search ranking</div>
+        <a href="https://app.gettrayn.com" class="tier-cta">Start free trial</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name" style="color:#C4B5FD;">Pro</div>
+        <div class="tier-price">₹2,999<span>/mo</span></div>
+        <div class="tier-desc">For trainers scaling a serious coaching business. WhatsApp automation, white-label app, and top marketplace placement.</div>
+        <div class="tier-divider"></div>
+        <div class="tier-feature">Everything in Certified</div>
+        <div class="tier-feature">WhatsApp Business API</div>
+        <div class="tier-feature">White-label app</div>
+        <div class="tier-feature">Advanced automation</div>
+        <div class="tier-feature">Top marketplace placement</div>
+        <div class="tier-feature">Priority support</div>
+        <a href="https://app.gettrayn.com" class="tier-cta ghost">Start free trial</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--text4);">Founding 100 trainers lock in these prices forever. After that, prices increase.</p>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="section">
+  <div class="container">
+    <div class="privacy-wrap reveal">
+      <div class="section-label" style="text-align:center;margin-bottom:16px;">Privacy first</div>
+      <h2 style="font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-1.5px;margin-bottom:16px;">Your clients trust you with their bodies.<br>We keep their data just as private.</h2>
+      <p style="font-size:17px;color:var(--text2);max-width:600px;margin:0 auto 32px;line-height:1.7;font-weight:300;">Progress photos in encrypted private storage. No phone numbers exchanged. No client data sold. DPDPA 2023 compliant from day one. Built for trainers who take privacy seriously.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <div style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--ok);font-weight:600;">✓ DPDPA 2023 Compliant</div>
+        <div style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--ok);font-weight:600;">✓ Encrypted Storage</div>
+        <div style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--ok);font-weight:600;">✓ No Phone Numbers Shared</div>
+        <div style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--ok);font-weight:600;">✓ Data Deletion Rights</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cert-section">
+<!-- ATHLETIC FUND -->
+<section class="section">
   <div class="container">
-    <h2 class="section-title">Three Levels of Verification</h2>
-    <p class="section-sub">Every trainer is reviewed by real humans before joining. Clients see your tier on your profile. Total transparency.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px;max-width:1000px;margin-left:auto;margin-right:auto;">
-      <div style="background:#fff;border:2px solid #E5E7EB;border-radius:16px;padding:28px;text-align:center;">
-        <div style="font-size:40px;margin-bottom:8px;">🥉</div>
-        <h3 style="margin:0 0 8px;color:#111827;font-size:20px;">Trayn Verified</h3>
-        <p style="color:#6B7280;font-size:14px;line-height:1.6;margin:0;">Identity, references, and real coaching experience confirmed</p>
+    <div class="reveal" style="background:linear-gradient(135deg,rgba(251,191,36,0.06) 0%,rgba(251,191,36,0.02) 100%);border:1px solid rgba(251,191,36,0.15);border-radius:20px;padding:64px 52px;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(251,191,36,0.10);border:1px solid rgba(251,191,36,0.20);border-radius:999px;padding:7px 16px;font-size:11px;font-weight:600;color:#FBBF24;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">
+        🏆 Trayn Athletic Fund
       </div>
-      <div style="background:#fff;border:2px solid #FEF3C7;border-radius:16px;padding:28px;text-align:center;">
-        <div style="font-size:40px;margin-bottom:8px;">🥈</div>
-        <h3 style="margin:0 0 8px;color:#111827;font-size:20px;">Trayn Certified</h3>
-        <p style="color:#6B7280;font-size:14px;line-height:1.6;margin:0;">Adds verified credentials from NASM, ACE, ISSA, ACSM, REPS India, K11, or FITINDIA</p>
+      <h2 style="font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-1.5px;margin-bottom:16px;color:var(--text);">
+        India's serious trainers deserve<br>serious athletes to look up to.
+      </h2>
+      <p style="font-size:17px;color:var(--text2);max-width:580px;margin:0 auto 40px;line-height:1.7;font-weight:300;">
+        Grassroots bodybuilding athletes in India train without sponsors, without funding, and without recognition. We're changing that — directly from Trayn's revenue.
+      </p>
+      <div class="fund-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(251,191,36,0.10);border:1px solid rgba(251,191,36,0.12);border-radius:16px;overflow:hidden;width:100%;max-width:600px;margin:0 auto 40px;">
+        <div style="background:#08090B;padding:28px 20px;text-align:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-1.5px;color:#FBBF24;">2%</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">of gross revenue</div>
+        </div>
+        <div style="background:#08090B;padding:28px 20px;text-align:center;border-left:1px solid rgba(251,191,36,0.10);border-right:1px solid rgba(251,191,36,0.10);">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-1.5px;color:#FBBF24;">4×</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">per year, every year</div>
+        </div>
+        <div style="background:#08090B;padding:28px 20px;text-align:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-1.5px;color:#FBBF24;">100%</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">to athletes directly</div>
+        </div>
       </div>
-      <div style="background:#fff;border:2px solid #F3E8FF;border-radius:16px;padding:28px;text-align:center;">
-        <div style="font-size:40px;margin-bottom:8px;">🥇</div>
-        <h3 style="margin:0 0 8px;color:#111827;font-size:20px;">Trayn Elite</h3>
-        <p style="color:#6B7280;font-size:14px;line-height:1.6;margin:0;">Adds portfolio review and 5+ years of tracked coaching results</p>
-      </div>
+      <p style="font-size:14px;color:var(--text3);max-width:480px;margin:0 auto;">
+        Launching after our first 25 paying trainers. Every trainer on Trayn contributes to this fund — just by using the platform.
+      </p>
     </div>
-    <p style="text-align:center;margin-top:40px;color:#6B7280;">Last month: 47 trainers approved · 23 rejected. We take this seriously.</p>
   </div>
 </section>
 
-<section>
+<!-- SIGNUP CTA -->
+<section class="section" id="signup">
   <div class="container">
-    <div class="privacy">
-      <h2>Your fitness business is personal. Keep it that way.</h2>
-      <p>No more sharing your personal WhatsApp number. No more progress photos floating across chat backups. Trayn keeps everything between you and your client — encrypted, private, professional.</p>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="container">
-    <h2 class="section-title">Pricing for Founding 100</h2>
-    <p class="section-sub">First 100 verified trainers lock in this price forever. After that, prices increase.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>🥉 Trayn Verified</h3>
-        <div class="price">₹499<span style="font-size:16px;">/mo</span></div>
-        <div class="price-sub">or ₹5,490/year (pay for 11 months)</div>
-        <ul>
-          <li>Unlimited clients</li>
-          <li>Workout & diet plans</li>
-          <li>Progress tracking + photos</li>
-          <li>In-app messaging</li>
-          <li>Light WhatsApp automation</li>
-          <li>Trayn Verified badge</li>
-        </ul>
+    <div class="signup-wrap reveal">
+      <div class="section-label" style="text-align:center;margin-bottom:12px;">Get started</div>
+      <h2>Start your free trial today.</h2>
+      <p class="sub">30 days free. No credit card required. Set up in minutes.<br>Your account is reviewed and activated within 48 hours.</p>
+      <div class="signup-perks">
+        <div class="signup-perk">✓ 30-day free trial</div>
+        <div class="signup-perk">✓ Personal onboarding from the founder</div>
+        <div class="signup-perk">✓ Founding price locked forever</div>
       </div>
-      <div class="price-card featured">
-        <h3>🏅 Trayn Certified</h3>
-        <div class="price">₹999<span style="font-size:16px;">/mo</span></div>
-        <div class="price-sub">or ₹10,990/year (pay for 11 months)</div>
-        <ul>
-          <li>Unlimited clients</li>
-          <li>Workout & diet plans</li>
-          <li>Progress tracking + photos</li>
-          <li>In-app messaging</li>
-          <li>In-app form-check video calls</li>
-          <li>Scheduled WhatsApp nudges + flows</li>
-          <li>Custom client-facing branding</li>
-          <li>Featured directory placement</li>
-          <li>Trayn Certified badge</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <h3>👑 Trayn Elite</h3>
-        <div class="price">₹2,499<span style="font-size:16px;">/mo</span></div>
-        <div class="price-sub">or ₹27,490/year (pay for 11 months)</div>
-        <ul>
-          <li>Unlimited clients</li>
-          <li>Workout & diet plans</li>
-          <li>Progress tracking + photos</li>
-          <li>In-app messaging</li>
-          <li>In-app form-check video calls</li>
-          <li>Bring Your Own WhatsApp Business API</li>
-          <li>AI-generated coaching messages</li>
-          <li>White-label client app</li>
-          <li>Top directory placement</li>
-          <li>Dedicated account manager</li>
-        </ul>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:32px;color:#6B7280;font-weight:600;">Unlimited clients across every tier. Higher tiers unlock features and lower fees, not capacity.</p>
-    <p style="text-align:center;margin-top:16px;color:#9CA3AF;font-size:14px;">Optional Trayn Billing: 3% per transaction for auto-pay, GST receipts, smart payment retry. Skip it = handle payments yourself.</p>
-  </div>
-</section>
-
-<section id="waitlist">
-  <div class="container">
-    <div class="waitlist">
-      <h2>Be among the first 100 verified trainers.</h2>
-      <p>Free for 6 months. Personal onboarding from the founder. Lifetime founder pricing locked.</p>
-      <form class="waitlist-form" id="waitlistForm">
-        <input type="text" id="name" placeholder="Your full name" required>
-        <input type="email" id="email" placeholder="you@example.com" required>
-        <select id="role" required>
-          <option value="">I am a...</option>
-          <option value="trainer">Certified Online Trainer</option>
-          <option value="client">Fitness Client</option>
-          <option value="gym_owner">Gym Owner</option>
-          <option value="other">Other</option>
-        </select>
-        <button type="submit">Apply for Early Access</button>
-      </form>
-      <div id="status"></div>
-      <p style="margin-top:24px;font-size:14px;opacity:0.7;">We personally review every application. You will hear from us within 48 hours.</p>
+      <a href="https://app.gettrayn.com" class="btn-primary" style="font-size:16px;padding:16px 36px;">Create your account →</a>
+      <p class="signup-note">Serious trainers only. Every account reviewed by a human before activation.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
+    <div class="footer-links">
+      <a href="https://app.gettrayn.com">App</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:hello@gettrayn.com">hello@gettrayn.com</a>
+    </div>
     <p>© 2026 Trayn. Built with respect for India's serious fitness professionals.</p>
-    <p style="margin-top:8px;font-size:13px;">gettrayn.com · hello@gettrayn.com</p>
+    <p style="margin-top:6px;">gettrayn.com · Made in India 🇮🇳</p>
   </div>
 </footer>
 
-<script type="module">
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-
-const supabase = createClient(
-  'https://zqawozlmtgmsusakcivs.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxYXdvemxtdGdtc3VzYWtjaXZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMTUzNDMsImV4cCI6MjA5Mzg5MTM0M30.5Ok1EFdjX4Cg8XMugcHYp5KmGVqSaJrvOzSY-HlLx3o'
-)
-
-document.getElementById('waitlistForm').addEventListener('submit', async (e) => {
-  e.preventDefault()
-  const status = document.getElementById('status')
-  const name = document.getElementById('name').value.trim()
-  const email = document.getElementById('email').value.trim().toLowerCase()
-  const role = document.getElementById('role').value
-
-  status.style.color = '#9CA3AF'
-  status.textContent = 'Submitting your application...'
-
-  try {
-    const { error } = await supabase.from('waitlist').insert({ name, email, role })
-    if (error) throw error
-    status.style.color = '#10B981'
-    status.textContent = '✓ Application received! We will personally review and email you within 48 hours.'
-    e.target.reset()
-  } catch (err) {
-    status.style.color = '#EF4444'
-    if (err.message?.includes('duplicate')) {
-      status.textContent = 'You are already on the list 🎉'
-    } else {
-      status.textContent = 'Something went wrong. Try again or email hello@gettrayn.com'
-    }
-  }
+<script>
+// Cursor glow
+const glow = document.getElementById('cursorGlow')
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px'
+  glow.style.top = e.clientY + 'px'
 })
-</script>
 
+// Scroll reveal
+function checkReveal() {
+  const vh = window.innerHeight
+  document.querySelectorAll('.reveal').forEach(el => {
+    const top = el.getBoundingClientRect().top
+    if (top < vh * 0.88) {
+      el.classList.add('visible')
+    } else {
+      el.classList.remove('visible')
+    }
+  })
+}
+window.addEventListener('scroll', checkReveal, { passive: true })
+checkReveal()
+</script>
 </body>
 </html>
