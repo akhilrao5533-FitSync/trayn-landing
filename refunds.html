@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy — Trayn</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #111118; --border: #1e1e2a; --accent: #3d4dff;
+      --accent-soft: rgba(61,77,255,0.10); --text: #f0f0f5; --text2: #a0a0b0; --text3: #5a5a6e;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; min-height: 100vh; }
+    header { border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .header-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
+    .logo span { color: var(--accent); }
+    .updated-badge { font-size: 12px; color: var(--text3); font-weight: 500; background: var(--surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; }
+    .hero { max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; border-bottom: 1px solid var(--border); }
+    .hero-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 6vw, 52px); line-height: 1.1; letter-spacing: -1px; color: var(--text); margin-bottom: 20px; }
+    .hero p { font-size: 16px; color: var(--text2); max-width: 540px; line-height: 1.7; }
+    .hero-meta { margin-top: 28px; display: flex; gap: 24px; flex-wrap: wrap; }
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .meta-label { font-size: 11px; color: var(--text3); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    .meta-value { font-size: 13px; color: var(--text2); font-weight: 500; }
+    .content { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+    .section { margin-bottom: 52px; }
+    .section-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+    .section h2 { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--text); margin-bottom: 16px; letter-spacing: -0.3px; }
+    .section p { color: var(--text2); margin-bottom: 14px; font-size: 15px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul { color: var(--text2); font-size: 15px; padding-left: 20px; margin-bottom: 14px; }
+    .section ul li { margin-bottom: 8px; }
+    .divider { height: 1px; background: var(--border); margin-bottom: 52px; }
+    .highlight { background: var(--accent-soft); border: 1px solid rgba(61,77,255,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .highlight p { color: var(--text) !important; font-size: 14px !important; margin: 0 !important; }
+    .warning-box { background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .warning-box p { color: var(--text2) !important; font-size: 14px !important; margin: 0 !important; line-height: 1.7; }
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-top: 20px; }
+    .contact-card h3 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 8px; }
+    .contact-card p { color: var(--text2); font-size: 14px; margin-bottom: 16px !important; }
+    .contact-email { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; }
+    .link-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .link-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); color: var(--text2); font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 8px; text-decoration: none; }
+    .link-pill:hover { border-color: var(--accent); color: var(--text); }
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; }
+    footer p { font-size: 13px; color: var(--text3); }
+    @media (max-width: 600px) { .hero { padding: 40px 20px 36px; } .content { padding: 40px 20px 60px; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://gettrayn.com" class="logo">Trayn<span>.</span></a>
+      <span class="updated-badge">Last updated: 9 Jun 2026</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="hero-label">Legal</p>
+    <h1>Refund Policy</h1>
+    <p>Simple and fair. We want every trainer on Trayn to feel confident about what they're paying for.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><span class="meta-label">Effective</span><span class="meta-value">9 June 2026</span></div>
+      <div class="meta-item"><span class="meta-label">Applies to</span><span class="meta-value">Trainer Subscriptions</span></div>
+      <div class="meta-item"><span class="meta-label">Processed via</span><span class="meta-value">Razorpay</span></div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <p class="section-number">01</p>
+      <h2>The Short Version</h2>
+      <div class="highlight">
+        <p>All payments are non-refundable. You can cancel anytime and keep access until the end of your billing period. You will not be charged again after cancellation.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">02</p>
+      <h2>No Refunds on Subscription Payments</h2>
+      <p>Once a payment is processed, it is non-refundable. This applies to both monthly and annual subscriptions.</p>
+      <p>We offer a 30-day free trial so you can fully experience the platform before committing to a paid plan. We encourage you to use the trial period to evaluate whether Trayn is the right fit for your practice.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">03</p>
+      <h2>Cancellation</h2>
+      <p>You can cancel your subscription at any time from within the app under Billing settings.</p>
+      <p>When you cancel:</p>
+      <ul>
+        <li>Your subscription will not renew at the next billing date</li>
+        <li>You retain full access to the platform until the end of your current billing period</li>
+        <li>No partial refund is issued for unused days</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">04</p>
+      <h2>Exceptions</h2>
+      <p>We will consider refund requests only in the following cases:</p>
+      <ul>
+        <li>You were charged twice for the same billing period due to a technical error</li>
+        <li>Your account was activated after a significant delay on our end (more than 7 days after payment)</li>
+      </ul>
+      <p>To request an exception, email us at <a href="mailto:akhil@gettrayn.com" style="color:var(--accent)">akhil@gettrayn.com</a> within 7 days of the charge with your registered email and payment details.</p>
+      <div class="warning-box">
+        <p>Refund exceptions are evaluated on a case-by-case basis and are not guaranteed. Trayn reserves the right to decline any refund request outside the conditions above.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">05</p>
+      <h2>Annual Plans</h2>
+      <p>Annual subscriptions are charged upfront for the full year and are non-refundable. If you cancel an annual plan, you retain access until the end of the 12-month period.</p>
+      <p>We recommend starting with a monthly plan if you are unsure about committing to a full year.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">06</p>
+      <h2>Account Deletion</h2>
+      <p>If you delete your account, your subscription is cancelled immediately and all data is permanently deleted. No refund is issued for the remaining billing period.</p>
+      <p>You can delete your account from within the app or by following the instructions at <a href="https://gettrayn.com/delete-account" style="color:var(--accent)">gettrayn.com/delete-account</a>.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-number">07</p>
+      <h2>Contact</h2>
+      <div class="contact-card">
+        <h3>Questions about a payment?</h3>
+        <p>Write to us with your registered email and we'll get back to you within 2 business days.</p>
+        <a href="mailto:akhil@gettrayn.com" class="contact-email">akhil@gettrayn.com</a>
+        <div class="link-row">
+          <a href="https://gettrayn.com/terms" class="link-pill">Terms of Service</a>
+          <a href="https://gettrayn.com/privacy" class="link-pill">Privacy Policy</a>
+          <a href="https://gettrayn.com/delete-account" class="link-pill">Delete Account</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Trayn. Made in India.</p>
+  </footer>
+
+</body>
+</html>
