@@ -14,8 +14,8 @@
     body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; min-height: 100vh; }
     header { border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); z-index: 100; }
     .header-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
-    .logo span { color: var(--accent); }
+    .logo { font-size: 22px; font-weight: 700; color: #3d4dff; text-decoration: none; letter-spacing: -1px; }
+    .logo-dot { display: inline-block; width: 5px; height: 5px; border-radius: 1px; background: #FFFFFF; margin-left:2px;vertical-align:middle;position:relative;top:3px; }
     .updated-badge { font-size: 12px; color: var(--text3); font-weight: 500; background: var(--surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; }
     .hero { max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; border-bottom: 1px solid var(--border); }
     .hero-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
@@ -52,7 +52,7 @@
 
   <header>
     <div class="header-inner">
-      <a href="https://gettrayn.com" class="logo">Trayn<span>.</span></a>
+      <a href="https://gettrayn.com" class="logo">trayn<span class="logo-dot"></span></a>
       <span class="updated-badge">Last updated: 9 Jun 2026</span>
     </div>
   </header>
@@ -126,9 +126,10 @@
         <li>Studio — ₹699/month or ₹6,299/year</li>
         <li>Verified — ₹999/month or ₹8,999/year</li>
         <li>Certified — ₹1,499/month or ₹13,499/year</li>
-        <li>Pro — ₹2,999/month or ₹26,999/year</li>
+        <li>Pro — ₹2,499/month or ₹22,499/year</li>
       </ul>
       <p>All prices are inclusive of applicable taxes. Subscriptions auto-renew unless cancelled before the renewal date.</p>
+      <p>The first 100 trainers (across all tiers, counted cumulatively) who choose an annual plan lock in their annual rate permanently as a founding-member benefit. Once 100 founding slots are filled, annual pricing may be adjusted for new subscribers; existing founding-rate subscribers are unaffected.</p>
       <div class="highlight">
         <p>Trayn does not use Apple In-App Purchase or Google Play Billing for subscriptions. All payments are made directly through our website at app.gettrayn.com.</p>
       </div>

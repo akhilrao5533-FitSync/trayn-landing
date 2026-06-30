@@ -37,8 +37,8 @@ a{text-decoration:none;color:inherit;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,9,11,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.nav-logo{font-size:22px;font-weight:700;letter-spacing:-1px;color:var(--text);}
-.nav-logo span{color:var(--accent2);}
+.nav-logo{font-size:22px;font-weight:700;letter-spacing:-1px;color:#3d4dff;}
+.nav-logo-dot{display:inline-block;width:5px;height:5px;border-radius:1px;background:#FFFFFF;margin-left:2px;vertical-align:middle;position:relative;top:3px;}
 .nav-links{display:flex;align-items:center;gap:8px;}
 .nav-link{font-size:14px;color:var(--text3);padding:8px 14px;border-radius:8px;transition:color .2s,background .2s;}
 .nav-link:hover{color:var(--text);background:var(--bg2);}
@@ -139,6 +139,16 @@ h1 .accent{color:var(--accent2);}
 .tier-name{font-size:18px;font-weight:700;letter-spacing:-.5px;margin-bottom:4px;}
 .tier-price{font-size:36px;font-weight:700;letter-spacing:-1.5px;color:var(--accent2);margin-bottom:4px;}
 .tier-price span{font-size:16px;font-weight:400;color:var(--text3);}
+.pricing-toggle{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:32px;}
+.pricing-toggle-label{font-size:14px;font-weight:600;color:var(--text3);cursor:pointer;transition:color .2s;}
+.pricing-toggle-label.active{color:#fff;}
+.pricing-toggle-switch{position:relative;width:48px;height:26px;background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:999px;cursor:pointer;transition:background .2s;}
+.pricing-toggle-switch.annual{background:var(--accent);}
+.pricing-toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;}
+.pricing-toggle-switch.annual .pricing-toggle-knob{transform:translateX(22px);}
+.pricing-toggle-save{font-size:11px;font-weight:600;color:var(--accent2);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:999px;padding:3px 10px;margin-left:2px;}
+.founding-banner{display:none;text-align:center;font-size:13px;font-weight:600;color:var(--accent2);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:10px;padding:10px 16px;max-width:420px;margin:0 auto 28px;}
+.founding-banner.show{display:block;}
 .tier-desc{font-size:13px;color:var(--text3);margin-bottom:20px;line-height:1.6;}
 .tier-divider{height:1px;background:var(--border);margin-bottom:20px;}
 .tier-feature{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:14px;color:var(--text2);}
@@ -496,7 +506,7 @@ footer a:hover{color:var(--text);}
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <nav>
-  <div class="nav-logo">trayn<span>.</span></div>
+  <div class="nav-logo">trayn<span class="nav-logo-dot"></span></div>
   <div class="nav-links">
     <a href="#features" class="nav-link">Features</a>
     <a href="#pricing" class="nav-link">Pricing</a>
@@ -838,6 +848,27 @@ aiTabTimer = setInterval(function(){
   if(aiTabPaused) return;
   trnAiTab((aiTabIdx + 1) % 3, false);
 }, 5000);
+var trnPricingAnnual = false;
+var TRN_PRICING_TIERS = ['studio', 'verified', 'certified', 'pro'];
+
+function trnPricingToggle(forceAnnual){
+  trnPricingAnnual = (typeof forceAnnual === 'boolean') ? forceAnnual : !trnPricingAnnual;
+
+  document.getElementById('pricing-switch').classList.toggle('annual', trnPricingAnnual);
+  document.getElementById('pricing-label-monthly').classList.toggle('active', !trnPricingAnnual);
+  document.getElementById('pricing-label-annual').classList.toggle('active', trnPricingAnnual);
+  document.getElementById('founding-banner').classList.toggle('show', trnPricingAnnual);
+
+  for (var k = 0; k < TRN_PRICING_TIERS.length; k++) {
+    var tier = TRN_PRICING_TIERS[k];
+    var priceEl = document.getElementById('tier-price-' + tier);
+    var suffixEl = document.getElementById('tier-price-suffix-' + tier);
+    if (!priceEl || !suffixEl) continue;
+    var amount = trnPricingAnnual ? priceEl.getAttribute('data-annual') : priceEl.getAttribute('data-monthly');
+    priceEl.firstChild.textContent = '₹' + amount;
+    suffixEl.textContent = trnPricingAnnual ? '/yr' : '/mo';
+  }
+}
 </script>
 
 <!-- TWO SIDES -->
@@ -1177,7 +1208,7 @@ aiTabTimer = setInterval(function(){
       <div class="feature-card reveal stagger-2">
         <div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
         <h3>Video Calls</h3>
-        <p>Built-in video sessions via Google Meet — no Zoom, no separate links. 15 sessions/month on Verified and Certified. Unlimited on Pro. Session history tracked automatically.</p>
+        <p>Built-in video sessions via Google Meet — no Zoom, no separate links. 15 sessions/month on Verified and Certified. Session history tracked automatically.</p>
         <span class="feature-tag">Replaces Zoom</span>
       </div>
     </div>
@@ -1258,10 +1289,17 @@ aiTabTimer = setInterval(function(){
         <div class="verify-label">Human reviewed (no algorithms)</div>
       </div>
     </div>
+    <div class="pricing-toggle">
+      <span class="pricing-toggle-label active" id="pricing-label-monthly" onclick="trnPricingToggle(false)">Monthly</span>
+      <div class="pricing-toggle-switch" id="pricing-switch" onclick="trnPricingToggle()"><div class="pricing-toggle-knob"></div></div>
+      <span class="pricing-toggle-label" id="pricing-label-annual" onclick="trnPricingToggle(true)">Annual</span>
+      <span class="pricing-toggle-save">Save ~3 months</span>
+    </div>
+    <p class="founding-banner" id="founding-banner">🏆 Founding rate — locked in for the first 100 trainers on annual plans, forever.</p>
     <div class="tier-grid reveal" id="pricing">
       <div class="tier-card">
         <div class="tier-name" style="color:#FBBF24;">Studio</div>
-        <div class="tier-price">₹699<span>/mo</span></div>
+        <div class="tier-price" id="tier-price-studio" data-monthly="699" data-annual="6,299">₹699<span id="tier-price-suffix-studio">/mo</span></div>
         <div class="tier-desc">For trainers who work with clients in person. Full platform access — workout plans, progress tracking, payments, and messaging. No video calls or form checks.</div>
         <div class="tier-divider"></div>
         <div class="tier-feature">Unlimited clients</div>
@@ -1274,7 +1312,7 @@ aiTabTimer = setInterval(function(){
       </div>
       <div class="tier-card">
         <div class="tier-name" style="color:#34D399;">Verified</div>
-        <div class="tier-price">₹999<span>/mo</span></div>
+        <div class="tier-price" id="tier-price-verified" data-monthly="999" data-annual="8,999">₹999<span id="tier-price-suffix-verified">/mo</span></div>
         <div class="tier-desc">For online personal trainers. Identity and experience verified by Trayn. Full platform access including video calls, form checks, and marketplace listing.</div>
         <div class="tier-divider"></div>
         <div class="tier-feature">Unlimited clients</div>
@@ -1289,7 +1327,7 @@ aiTabTimer = setInterval(function(){
       <div class="tier-card featured">
         <div class="tier-badge">Most Popular</div>
         <div class="tier-name" style="color:#818CF8;">Certified</div>
-        <div class="tier-price">₹1,499<span>/mo</span></div>
+        <div class="tier-price" id="tier-price-certified" data-monthly="1,499" data-annual="13,499">₹1,499<span id="tier-price-suffix-certified">/mo</span></div>
         <div class="tier-desc">Your certification is your credibility — verified and displayed by Trayn. Get a dedicated trust badge and enhanced marketplace visibility, helping clients find and choose you with confidence.</div>
         <div class="tier-divider"></div>
         <div class="tier-feature">Everything in Verified</div>
@@ -1298,19 +1336,6 @@ aiTabTimer = setInterval(function(){
         <div class="tier-feature">Enhanced marketplace visibility</div>
         <div class="tier-feature">Higher search ranking</div>
         <a href="https://app.gettrayn.com" class="tier-cta">Start free trial</a>
-      </div>
-      <div class="tier-card">
-        <div class="tier-name" style="color:#C4B5FD;">Pro</div>
-        <div class="tier-price">₹2,999<span>/mo</span></div>
-        <div class="tier-desc">For trainers scaling a serious coaching business. WhatsApp automation, white-label app, and top marketplace placement.</div>
-        <div class="tier-divider"></div>
-        <div class="tier-feature">Everything in Certified</div>
-        <div class="tier-feature">WhatsApp Business API</div>
-        <div class="tier-feature">White-label app</div>
-        <div class="tier-feature">Advanced automation</div>
-        <div class="tier-feature">Top marketplace placement</div>
-        <div class="tier-feature">Priority support</div>
-        <a href="https://app.gettrayn.com" class="tier-cta ghost">Start free trial</a>
       </div>
     </div>
     <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--text4);">Founding 100 trainers lock in these prices forever. After that, prices increase.</p>
