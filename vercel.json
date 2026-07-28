@@ -1,5 +1,20 @@
 {
   "rewrites": [
-    { "source": "/privacy", "destination": "/privacy.html" }
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/delete-account",
+      "destination": "/delete-account.html"
+    },
+    {
+      "source": "/refunds",
+      "destination": "/refunds.html"
+    }
   ]
 }
